@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+
+[resource]
+script = ExtResource("1_tower")
+id = &"stone_thrower"
+display_name = "Stone"
+cost = 80
+damage = 20.0
+damage_type = 0
+attack_range = 3.0
+fire_interval = 1.6
+projectile_speed = 9.0
+splash_radius = 0.9
+hits_flyers = false
+color = Color(0.7, 0.6, 0.45, 1)

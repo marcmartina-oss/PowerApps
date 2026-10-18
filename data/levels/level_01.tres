@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="LevelData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/level_data.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/data/wave_data.gd" id="2_wave"]
+[ext_resource type="Script" path="res://scripts/data/spawn_group.gd" id="3_group"]
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="4_tower"]
+[ext_resource type="Resource" path="res://data/enemies/goblin.tres" id="5_goblin"]
+[ext_resource type="Resource" path="res://data/enemies/wolf_rider.tres" id="6_wolf"]
+[ext_resource type="Resource" path="res://data/enemies/orc_brute.tres" id="7_orc"]
+[ext_resource type="Resource" path="res://data/towers/archer.tres" id="8_archer"]
+[ext_resource type="Resource" path="res://data/towers/stone_thrower.tres" id="9_stone"]
+
+[sub_resource type="Resource" id="w1_goblins"]
+script = ExtResource("3_group")
+enemy = ExtResource("5_goblin")
+count = 6
+interval = 1.5
+
+[sub_resource type="Resource" id="wave_1"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w1_goblins")])
+clear_bonus = 25
+
+[sub_resource type="Resource" id="w2_goblins"]
+script = ExtResource("3_group")
+enemy = ExtResource("5_goblin")
+count = 14
+interval = 0.8
+
+[sub_resource type="Resource" id="wave_2"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w2_goblins")])
+clear_bonus = 30
+
+[sub_resource type="Resource" id="w3_goblins"]
+script = ExtResource("3_group")
+enemy = ExtResource("5_goblin")
+count = 10
+interval = 0.9
+
+[sub_resource type="Resource" id="w3_wolves"]
+script = ExtResource("3_group")
+enemy = ExtResource("6_wolf")
+count = 6
+interval = 1.2
+start_delay = 6.0
+
+[sub_resource type="Resource" id="wave_3"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w3_goblins"), SubResource("w3_wolves")])
+clear_bonus = 35
+
+[sub_resource type="Resource" id="w4_orcs"]
+script = ExtResource("3_group")
+enemy = ExtResource("7_orc")
+count = 4
+interval = 3.0
+
+[sub_resource type="Resource" id="w4_goblins"]
+script = ExtResource("3_group")
+enemy = ExtResource("5_goblin")
+count = 12
+interval = 0.7
+start_delay = 1.5
+
+[sub_resource type="Resource" id="wave_4"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w4_orcs"), SubResource("w4_goblins")])
+clear_bonus = 40
+
+[sub_resource type="Resource" id="w5_goblins"]
+script = ExtResource("3_group")
+enemy = ExtResource("5_goblin")
+count = 16
+interval = 0.6
+
+[sub_resource type="Resource" id="w5_wolves"]
+script = ExtResource("3_group")
+enemy = ExtResource("6_wolf")
+count = 8
+interval = 0.9
+start_delay = 4.0
+
+[sub_resource type="Resource" id="w5_orcs"]
+script = ExtResource("3_group")
+enemy = ExtResource("7_orc")
+count = 5
+interval = 2.5
+start_delay = 8.0
+
+[sub_resource type="Resource" id="wave_5"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w5_goblins"), SubResource("w5_wolves"), SubResource("w5_orcs")])
+clear_bonus = 0
+
+[resource]
+script = ExtResource("1_level")
+id = &"level_01"
+display_name = "The Old Road"
+grid_size = Vector2i(9, 14)
+gates = Array[Vector2i]([Vector2i(4, 0)])
+keep = Vector2i(4, 13)
+rocks = Array[Vector2i]([Vector2i(0, 4), Vector2i(1, 4), Vector2i(7, 8), Vector2i(8, 8), Vector2i(4, 6), Vector2i(2, 11), Vector2i(6, 11)])
+starting_gold = 200
+starting_lives = 20
+wall_cost = 5
+available_towers = Array[ExtResource("4_tower")]([ExtResource("8_archer"), ExtResource("9_stone")])
+waves = Array[ExtResource("2_wave")]([SubResource("wave_1"), SubResource("wave_2"), SubResource("wave_3"), SubResource("wave_4"), SubResource("wave_5")])

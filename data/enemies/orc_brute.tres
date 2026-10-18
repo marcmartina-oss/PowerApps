@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enemy"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"orc_brute"
+display_name = "Orc Brute"
+max_health = 140.0
+speed = 0.9
+armor = 0.25
+lives_cost = 1
+gold_reward = 10
+flying = false
+radius = 0.34
+color = Color(0.35, 0.55, 0.25, 1)

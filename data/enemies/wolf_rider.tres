@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enemy"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"wolf_rider"
+display_name = "Wolf Rider"
+max_health = 24.0
+speed = 3.0
+armor = 0.0
+lives_cost = 1
+gold_reward = 4
+flying = false
+radius = 0.26
+color = Color(0.75, 0.75, 0.8, 1)
