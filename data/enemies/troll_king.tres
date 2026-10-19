@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enemy"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"troll_king"
+display_name = "Troll King"
+max_health = 1800.0
+speed = 0.6
+armor = 0.3
+lives_cost = 5
+gold_reward = 120
+radius = 0.45
+look = 9
+color = Color(0.45, 0.6, 0.35, 1)
+is_boss = true
+flying = false
+breaks_walls = true
+smash_time = 1.0
+phases_walls = false
+phase_interval = 4.0
+heal_amount = 0.0
+heal_radius = 1.5
+heal_interval = 2.0

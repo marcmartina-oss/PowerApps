@@ -10,12 +10,14 @@ const REFUND_RATE := 0.7
 var gold := 0
 var lives := 0
 var starting_lives := 0
+var total_earned := 0
 
 
 func setup(start_gold: int, start_lives: int) -> void:
 	gold = start_gold
 	lives = start_lives
 	starting_lives = start_lives
+	total_earned = 0
 	gold_changed.emit(gold)
 	lives_changed.emit(lives)
 
@@ -34,6 +36,7 @@ func spend(cost: int) -> bool:
 
 func earn(amount: int) -> void:
 	gold += amount
+	total_earned += amount
 	gold_changed.emit(gold)
 
 

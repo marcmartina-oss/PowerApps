@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enemy"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"shaman"
+display_name = "Shaman"
+max_health = 55.0
+speed = 1.2
+armor = 0.0
+lives_cost = 1
+gold_reward = 8
+radius = 0.26
+look = 7
+color = Color(0.5, 0.35, 0.6, 1)
+is_boss = false
+flying = false
+breaks_walls = false
+smash_time = 2.0
+phases_walls = false
+phase_interval = 4.0
+heal_amount = 8.0
+heal_radius = 1.5
+heal_interval = 2.0

@@ -1,0 +1,171 @@
+[gd_resource type="Resource" script_class="LevelData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/level_data.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/data/wave_data.gd" id="2_wave"]
+[ext_resource type="Script" path="res://scripts/data/spawn_group.gd" id="3_group"]
+[ext_resource type="Script" path="res://scripts/data/tutorial_step.gd" id="4_tut"]
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="5_tower"]
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="6_enemy"]
+[ext_resource type="Resource" path="res://data/enemies/bat_swarm.tres" id="e_bat_swarm"]
+[ext_resource type="Resource" path="res://data/enemies/ghost.tres" id="e_ghost"]
+[ext_resource type="Resource" path="res://data/enemies/goblin.tres" id="e_goblin"]
+[ext_resource type="Resource" path="res://data/enemies/shaman.tres" id="e_shaman"]
+[ext_resource type="Resource" path="res://data/enemies/slime.tres" id="e_slime"]
+[ext_resource type="Resource" path="res://data/enemies/wolf_rider.tres" id="e_wolf_rider"]
+[ext_resource type="Resource" path="res://data/towers/arcane_spire.tres" id="t_arcane_spire"]
+[ext_resource type="Resource" path="res://data/towers/archer.tres" id="t_archer"]
+[ext_resource type="Resource" path="res://data/towers/flame_brazier.tres" id="t_flame_brazier"]
+[ext_resource type="Resource" path="res://data/towers/frost_mage.tres" id="t_frost_mage"]
+[ext_resource type="Resource" path="res://data/towers/stone_thrower.tres" id="t_stone_thrower"]
+[ext_resource type="Resource" path="res://data/towers/war_banner.tres" id="t_war_banner"]
+
+[sub_resource type="Resource" id="w0_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 19
+interval = 0.95
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_0"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w0_g0")])
+clear_bonus = 62
+
+[sub_resource type="Resource" id="w1_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_ghost")
+count = 5
+interval = 0.92
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w1_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_shaman")
+count = 1
+interval = 0.92
+start_delay = 2.3
+gate_index = 1
+
+[sub_resource type="Resource" id="wave_1"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w1_g0"), SubResource("w1_g1")])
+clear_bonus = 66
+
+[sub_resource type="Resource" id="w2_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 15
+interval = 0.89
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w2_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_wolf_rider")
+count = 11
+interval = 0.89
+start_delay = 6.7
+gate_index = 1
+
+[sub_resource type="Resource" id="wave_2"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w2_g0"), SubResource("w2_g1")])
+clear_bonus = 70
+
+[sub_resource type="Resource" id="w3_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_wolf_rider")
+count = 26
+interval = 0.86
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_3"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w3_g0")])
+clear_bonus = 74
+
+[sub_resource type="Resource" id="w4_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_bat_swarm")
+count = 30
+interval = 0.83
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_4"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w4_g0")])
+clear_bonus = 78
+
+[sub_resource type="Resource" id="w5_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_slime")
+count = 7
+interval = 0.8
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w5_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_wolf_rider")
+count = 17
+interval = 0.8
+start_delay = 2.8
+gate_index = 1
+
+[sub_resource type="Resource" id="wave_5"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w5_g0"), SubResource("w5_g1")])
+clear_bonus = 82
+
+[sub_resource type="Resource" id="w6_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_ghost")
+count = 11
+interval = 0.77
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w6_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_bat_swarm")
+count = 25
+interval = 0.77
+start_delay = 4.2
+gate_index = 1
+
+[sub_resource type="Resource" id="wave_6"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w6_g0"), SubResource("w6_g1")])
+clear_bonus = 86
+
+[resource]
+script = ExtResource("1_level")
+id = &"challenge_nowalls"
+display_name = "No Walls"
+description = "Towers are your only walls"
+mode = 2
+world = 2
+number = 0
+grid_size = Vector2i(9, 14)
+gates = Array[Vector2i]([Vector2i(1, 0), Vector2i(7, 0)])
+alt_gates = Array[Vector2i]([])
+shifting_gates = false
+keep = Vector2i(4, 13)
+rocks = Array[Vector2i]([Vector2i(4, 8), Vector2i(0, 5), Vector2i(5, 7), Vector2i(5, 8)])
+water = Array[Vector2i]([Vector2i(6, 7), Vector2i(6, 8), Vector2i(6, 9), Vector2i(7, 9), Vector2i(6, 11), Vector2i(6, 12), Vector2i(6, 4), Vector2i(6, 5)])
+ruins = Array[Vector2i]([Vector2i(3, 6), Vector2i(3, 7), Vector2i(6, 2), Vector2i(3, 2), Vector2i(3, 3)])
+starting_gold = 260
+starting_lives = 20
+wall_cost = 5
+wall_budget = -1
+walls_allowed = false
+speed_multiplier = 1.0
+available_towers = Array[ExtResource("5_tower")]([ExtResource("t_archer"), ExtResource("t_stone_thrower"), ExtResource("t_frost_mage"), ExtResource("t_flame_brazier"), ExtResource("t_arcane_spire"), ExtResource("t_war_banner")])
+waves = Array[ExtResource("2_wave")]([SubResource("wave_0"), SubResource("wave_1"), SubResource("wave_2"), SubResource("wave_3"), SubResource("wave_4"), SubResource("wave_5"), SubResource("wave_6")])
+endless_pool = Array[ExtResource("6_enemy")]([])
+tutorial = Array[ExtResource("4_tut")]([])
+unlocks_towers = Array[ExtResource("5_tower")]([])

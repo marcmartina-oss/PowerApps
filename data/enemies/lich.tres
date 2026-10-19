@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enemy"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"lich"
+display_name = "Lich"
+max_health = 2600.0
+speed = 0.7
+armor = 0.2
+lives_cost = 5
+gold_reward = 200
+radius = 0.42
+look = 11
+color = Color(0.3, 0.25, 0.45, 1)
+is_boss = true
+flying = false
+breaks_walls = false
+smash_time = 2.0
+phases_walls = true
+phase_interval = 3.0
+heal_amount = 25.0
+heal_radius = 2.5
+heal_interval = 1.5

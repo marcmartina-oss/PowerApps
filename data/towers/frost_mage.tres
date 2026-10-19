@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/data/tower_spec.gd" id="2_spec"]
+
+[sub_resource type="Resource" id="spec_a"]
+script = ExtResource("2_spec")
+id = &"blizzard"
+display_name = "Blizzard"
+description = "Slows all in range"
+kind = 4
+value = 1.0
+
+[sub_resource type="Resource" id="spec_b"]
+script = ExtResource("2_spec")
+id = &"shatter"
+display_name = "Shatter"
+description = "x2.5 dmg to slowed"
+kind = 5
+value = 2.5
+
+[resource]
+script = ExtResource("1_tower")
+id = &"frost_mage"
+display_name = "Frost"
+description = "Slows enemies it hits. Hits flyers."
+cost = 90
+damage = 6.0
+damage_type = 1
+attack_range = 2.5
+fire_interval = 0.8
+projectile_speed = 12.0
+splash_radius = 0.0
+hits_flyers = true
+look = 2
+color = Color(0.55, 0.85, 1.0, 1)
+effect = 1
+effect_strength = 0.5
+effect_duration = 2.0
+upgrade_costs = Array[int]([100, 170])
+upgrade_damage_mult = 1.45
+upgrade_range_add = 0.3
+spec_a = SubResource("spec_a")
+spec_b = SubResource("spec_b")

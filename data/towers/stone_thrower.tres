@@ -1,17 +1,44 @@
 [gd_resource type="Resource" script_class="TowerData" format=3]
 
 [ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/data/tower_spec.gd" id="2_spec"]
+
+[sub_resource type="Resource" id="spec_a"]
+script = ExtResource("2_spec")
+id = &"boulder"
+display_name = "Boulder"
+description = "Bigger, harder splash"
+kind = 2
+value = 1.4
+
+[sub_resource type="Resource" id="spec_b"]
+script = ExtResource("2_spec")
+id = &"quake"
+display_name = "Quake"
+description = "Splash stuns 1s"
+kind = 3
+value = 1.0
 
 [resource]
 script = ExtResource("1_tower")
 id = &"stone_thrower"
 display_name = "Stone"
+description = "Slow boulders that splash groups. Can't hit flyers."
 cost = 80
-damage = 20.0
+damage = 22.0
 damage_type = 0
 attack_range = 3.0
 fire_interval = 1.6
 projectile_speed = 9.0
 splash_radius = 0.9
 hits_flyers = false
+look = 1
 color = Color(0.7, 0.6, 0.45, 1)
+effect = 0
+effect_strength = 0.0
+effect_duration = 0.0
+upgrade_costs = Array[int]([90, 160])
+upgrade_damage_mult = 1.5
+upgrade_range_add = 0.3
+spec_a = SubResource("spec_a")
+spec_b = SubResource("spec_b")

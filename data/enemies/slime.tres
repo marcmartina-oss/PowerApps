@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1_enemy"]
+[ext_resource type="Resource" path="res://data/enemies/slime_small.tres" id="2_split"]
+
+[resource]
+script = ExtResource("1_enemy")
+id = &"slime"
+display_name = "Slime"
+max_health = 70.0
+speed = 1.0
+armor = 0.0
+lives_cost = 1
+gold_reward = 5
+radius = 0.32
+look = 6
+color = Color(0.3, 0.85, 0.5, 1)
+is_boss = false
+flying = false
+breaks_walls = false
+smash_time = 2.0
+phases_walls = false
+phase_interval = 4.0
+heal_amount = 0.0
+heal_radius = 1.5
+heal_interval = 2.0
+split_into = ExtResource("2_split")
+split_count = 2

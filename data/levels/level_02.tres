@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="LevelData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/level_data.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/data/wave_data.gd" id="2_wave"]
+[ext_resource type="Script" path="res://scripts/data/spawn_group.gd" id="3_group"]
+[ext_resource type="Script" path="res://scripts/data/tutorial_step.gd" id="4_tut"]
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="5_tower"]
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="6_enemy"]
+[ext_resource type="Resource" path="res://data/enemies/goblin.tres" id="e_goblin"]
+[ext_resource type="Resource" path="res://data/towers/archer.tres" id="t_archer"]
+[ext_resource type="Resource" path="res://data/towers/stone_thrower.tres" id="t_stone_thrower"]
+
+[sub_resource type="Resource" id="w0_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 8
+interval = 1.25
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_0"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w0_g0")])
+clear_bonus = 26
+
+[sub_resource type="Resource" id="w1_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 10
+interval = 1.22
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_1"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w1_g0")])
+clear_bonus = 30
+
+[sub_resource type="Resource" id="w2_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 12
+interval = 1.19
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_2"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w2_g0")])
+clear_bonus = 34
+
+[sub_resource type="Resource" id="w3_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 14
+interval = 1.16
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_3"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w3_g0")])
+clear_bonus = 38
+
+[sub_resource type="Resource" id="w4_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 17
+interval = 1.13
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_4"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w4_g0")])
+clear_bonus = 42
+
+[sub_resource type="Resource" id="tut_0"]
+script = ExtResource("4_tut")
+text = "Walls cost only 5 gold. Tap a tile and build a Wall, or DRAG your finger to paint a whole line of walls."
+trigger = 0
+highlight = Vector2i(-1, -1)
+wave = 0
+
+[sub_resource type="Resource" id="tut_1"]
+script = ExtResource("4_tut")
+text = "See how the yellow preview showed the new route before you built? Longer routes mean more time under fire. Try to make the monsters zig-zag."
+trigger = 2
+highlight = Vector2i(-1, -1)
+wave = 0
+
+[sub_resource type="Resource" id="tut_2"]
+script = ExtResource("4_tut")
+text = "You can never block the path completely. A red tile means that build is refused, and nothing is charged."
+trigger = 5
+highlight = Vector2i(-1, -1)
+wave = 0
+
+[resource]
+script = ExtResource("1_level")
+id = &"level_02"
+display_name = "Miller's Field"
+description = ""
+mode = 0
+world = 1
+number = 2
+grid_size = Vector2i(9, 14)
+gates = Array[Vector2i]([Vector2i(4, 0)])
+alt_gates = Array[Vector2i]([])
+shifting_gates = false
+keep = Vector2i(4, 13)
+rocks = Array[Vector2i]([Vector2i(0, 2), Vector2i(1, 2), Vector2i(4, 5), Vector2i(0, 10)])
+water = Array[Vector2i]([])
+ruins = Array[Vector2i]([])
+starting_gold = 170
+starting_lives = 20
+wall_cost = 5
+wall_budget = -1
+walls_allowed = true
+speed_multiplier = 1.0
+available_towers = Array[ExtResource("5_tower")]([ExtResource("t_archer"), ExtResource("t_stone_thrower")])
+waves = Array[ExtResource("2_wave")]([SubResource("wave_0"), SubResource("wave_1"), SubResource("wave_2"), SubResource("wave_3"), SubResource("wave_4")])
+endless_pool = Array[ExtResource("6_enemy")]([])
+tutorial = Array[ExtResource("4_tut")]([SubResource("tut_0"), SubResource("tut_1"), SubResource("tut_2")])
+unlocks_towers = Array[ExtResource("5_tower")]([])

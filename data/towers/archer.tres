@@ -1,11 +1,29 @@
 [gd_resource type="Resource" script_class="TowerData" format=3]
 
 [ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/data/tower_spec.gd" id="2_spec"]
+
+[sub_resource type="Resource" id="spec_a"]
+script = ExtResource("2_spec")
+id = &"longbow"
+display_name = "Longbow"
+description = "+1.5 range"
+kind = 0
+value = 1.5
+
+[sub_resource type="Resource" id="spec_b"]
+script = ExtResource("2_spec")
+id = &"volley"
+display_name = "Volley"
+description = "Fires 3 arrows"
+kind = 1
+value = 3.0
 
 [resource]
 script = ExtResource("1_tower")
 id = &"archer"
 display_name = "Archer"
+description = "Fast single shots. Hits flyers."
 cost = 50
 damage = 10.0
 damage_type = 0
@@ -14,4 +32,13 @@ fire_interval = 0.5
 projectile_speed = 14.0
 splash_radius = 0.0
 hits_flyers = true
+look = 0
 color = Color(0.35, 0.75, 0.35, 1)
+effect = 0
+effect_strength = 0.0
+effect_duration = 0.0
+upgrade_costs = Array[int]([60, 110])
+upgrade_damage_mult = 1.5
+upgrade_range_add = 0.3
+spec_a = SubResource("spec_a")
+spec_b = SubResource("spec_b")

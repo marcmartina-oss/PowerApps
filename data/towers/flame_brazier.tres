@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/data/tower_spec.gd" id="2_spec"]
+
+[sub_resource type="Resource" id="spec_a"]
+script = ExtResource("2_spec")
+id = &"inferno"
+display_name = "Inferno"
+description = "Wider burning cone"
+kind = 6
+value = 0.8
+
+[sub_resource type="Resource" id="spec_b"]
+script = ExtResource("2_spec")
+id = &"wildfire"
+display_name = "Wildfire"
+description = "Burn spreads"
+kind = 7
+value = 1.0
+
+[resource]
+script = ExtResource("1_tower")
+id = &"flame_brazier"
+display_name = "Flame"
+description = "Short range burn over time. Slowed + burning = Thermal Shock."
+cost = 100
+damage = 4.0
+damage_type = 0
+attack_range = 1.6
+fire_interval = 0.7
+projectile_speed = 10.0
+splash_radius = 0.5
+hits_flyers = false
+look = 3
+color = Color(1.0, 0.5, 0.15, 1)
+effect = 2
+effect_strength = 12.0
+effect_duration = 3.0
+upgrade_costs = Array[int]([110, 180])
+upgrade_damage_mult = 1.5
+upgrade_range_add = 0.2
+spec_a = SubResource("spec_a")
+spec_b = SubResource("spec_b")

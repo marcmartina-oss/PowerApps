@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/data/tower_spec.gd" id="2_spec"]
+
+[sub_resource type="Resource" id="spec_a"]
+script = ExtResource("2_spec")
+id = &"rally"
+display_name = "Rally"
+description = "+45% attack speed"
+kind = 10
+value = 0.45
+
+[sub_resource type="Resource" id="spec_b"]
+script = ExtResource("2_spec")
+id = &"bounty"
+display_name = "Bounty"
+description = "+50% gold on kills"
+kind = 11
+value = 0.5
+
+[resource]
+script = ExtResource("1_tower")
+id = &"war_banner"
+display_name = "Banner"
+description = "No attack. Adjacent towers fire 12% faster per tier."
+cost = 120
+damage = 0.0
+damage_type = 0
+attack_range = 1.5
+fire_interval = 1.0
+projectile_speed = 1.0
+splash_radius = 0.0
+hits_flyers = false
+look = 5
+color = Color(0.9, 0.25, 0.25, 1)
+effect = 3
+effect_strength = 0.12
+effect_duration = 0.0
+upgrade_costs = Array[int]([100, 160])
+upgrade_damage_mult = 1.0
+upgrade_range_add = 0.0
+spec_a = SubResource("spec_a")
+spec_b = SubResource("spec_b")

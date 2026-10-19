@@ -1,0 +1,146 @@
+[gd_resource type="Resource" script_class="LevelData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/level_data.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/data/wave_data.gd" id="2_wave"]
+[ext_resource type="Script" path="res://scripts/data/spawn_group.gd" id="3_group"]
+[ext_resource type="Script" path="res://scripts/data/tutorial_step.gd" id="4_tut"]
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="5_tower"]
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="6_enemy"]
+[ext_resource type="Resource" path="res://data/enemies/bat_swarm.tres" id="e_bat_swarm"]
+[ext_resource type="Resource" path="res://data/enemies/goblin.tres" id="e_goblin"]
+[ext_resource type="Resource" path="res://data/enemies/orc_brute.tres" id="e_orc_brute"]
+[ext_resource type="Resource" path="res://data/enemies/sapper.tres" id="e_sapper"]
+[ext_resource type="Resource" path="res://data/enemies/wolf_rider.tres" id="e_wolf_rider"]
+[ext_resource type="Resource" path="res://data/towers/archer.tres" id="t_archer"]
+[ext_resource type="Resource" path="res://data/towers/frost_mage.tres" id="t_frost_mage"]
+[ext_resource type="Resource" path="res://data/towers/stone_thrower.tres" id="t_stone_thrower"]
+
+[sub_resource type="Resource" id="w0_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 11
+interval = 1.15
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_0"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w0_g0")])
+clear_bonus = 38
+
+[sub_resource type="Resource" id="w1_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_sapper")
+count = 3
+interval = 1.12
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w1_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 7
+interval = 1.12
+start_delay = 1.7
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_1"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w1_g0"), SubResource("w1_g1")])
+clear_bonus = 42
+
+[sub_resource type="Resource" id="w2_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_wolf_rider")
+count = 7
+interval = 1.09
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w2_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_bat_swarm")
+count = 9
+interval = 1.09
+start_delay = 3.8
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_2"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w2_g0"), SubResource("w2_g1")])
+clear_bonus = 46
+
+[sub_resource type="Resource" id="w3_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_goblin")
+count = 21
+interval = 1.06
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_3"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w3_g0")])
+clear_bonus = 50
+
+[sub_resource type="Resource" id="w4_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_wolf_rider")
+count = 19
+interval = 1.03
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_4"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w4_g0")])
+clear_bonus = 54
+
+[sub_resource type="Resource" id="w5_g0"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_sapper")
+count = 6
+interval = 1.0
+start_delay = 0.0
+gate_index = 0
+
+[sub_resource type="Resource" id="w5_g1"]
+script = ExtResource("3_group")
+enemy = ExtResource("e_orc_brute")
+count = 3
+interval = 1.0
+start_delay = 3.0
+gate_index = 0
+
+[sub_resource type="Resource" id="wave_5"]
+script = ExtResource("2_wave")
+groups = Array[ExtResource("3_group")]([SubResource("w5_g0"), SubResource("w5_g1")])
+clear_bonus = 58
+
+[resource]
+script = ExtResource("1_level")
+id = &"level_06"
+display_name = "The Breach"
+description = ""
+mode = 0
+world = 1
+number = 6
+grid_size = Vector2i(9, 14)
+gates = Array[Vector2i]([Vector2i(4, 0)])
+alt_gates = Array[Vector2i]([])
+shifting_gates = false
+keep = Vector2i(4, 13)
+rocks = Array[Vector2i]([Vector2i(1, 8), Vector2i(0, 1), Vector2i(0, 2), Vector2i(5, 6), Vector2i(4, 8), Vector2i(6, 9), Vector2i(7, 9), Vector2i(3, 10), Vector2i(3, 11)])
+water = Array[Vector2i]([])
+ruins = Array[Vector2i]([Vector2i(1, 7), Vector2i(2, 7)])
+starting_gold = 210
+starting_lives = 20
+wall_cost = 5
+wall_budget = -1
+walls_allowed = true
+speed_multiplier = 1.0
+available_towers = Array[ExtResource("5_tower")]([ExtResource("t_archer"), ExtResource("t_stone_thrower"), ExtResource("t_frost_mage")])
+waves = Array[ExtResource("2_wave")]([SubResource("wave_0"), SubResource("wave_1"), SubResource("wave_2"), SubResource("wave_3"), SubResource("wave_4"), SubResource("wave_5")])
+endless_pool = Array[ExtResource("6_enemy")]([])
+tutorial = Array[ExtResource("4_tut")]([])
+unlocks_towers = Array[ExtResource("5_tower")]([])

@@ -5,9 +5,17 @@ config_version=5
 
 config/name="Maze Keep"
 config/description="Build the labyrinth. Hold the keep."
-run/main_scene="res://scenes/level/level.tscn"
+run/main_scene="res://scenes/ui/title.tscn"
+config/version="0.2.0"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://assets/icons/icon.png"
+
+[autoload]
+
+Save="*res://scripts/managers/save_manager.gd"
+IAP="*res://scripts/managers/iap_manager.gd"
+Audio="*res://scripts/managers/audio_manager.gd"
+Game="*res://scripts/managers/game.gd"
 
 [display]
 

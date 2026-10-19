@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="TowerData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/data/tower_spec.gd" id="2_spec"]
+
+[sub_resource type="Resource" id="spec_a"]
+script = ExtResource("2_spec")
+id = &"lightning"
+display_name = "Lightning"
+description = "Chains to 3 more"
+kind = 8
+value = 3.0
+
+[sub_resource type="Resource" id="spec_b"]
+script = ExtResource("2_spec")
+id = &"void"
+display_name = "Void"
+description = "True damage x1.5"
+kind = 9
+value = 1.5
+
+[resource]
+script = ExtResource("1_tower")
+id = &"arcane_spire"
+display_name = "Arcane"
+description = "Heavy magic bolts that pierce armor. Hits flyers."
+cost = 140
+damage = 40.0
+damage_type = 1
+attack_range = 3.0
+fire_interval = 1.4
+projectile_speed = 16.0
+splash_radius = 0.0
+hits_flyers = true
+look = 4
+color = Color(0.75, 0.45, 1.0, 1)
+effect = 0
+effect_strength = 0.0
+effect_duration = 0.0
+upgrade_costs = Array[int]([150, 240])
+upgrade_damage_mult = 1.55
+upgrade_range_add = 0.3
+spec_a = SubResource("spec_a")
+spec_b = SubResource("spec_b")
